@@ -1,0 +1,10 @@
+'/C/Program Files/Microsoft MPI/Bin/mpiexec' -np 4 FreeFem++-mpi -nw 'heat_ddm.edp' -mode 2 -ov 4 -pORAS 1 -NE 350 -NC -300 -NCT 350 -outprefix results/alpha_study/mesh3_N4_ov4_a1 -v 0 -ffddm_verbosity 0 -options_left 0
+Mesh: 285636 vertices, 563508 triangles
+==================================================
+ ORAS (4 ranks, overlap=4)
+ Setup time        : 26.0664 s
+ GMRES solve time  : 0.798195 s
+ Total time        : 31.1827 s
+ GMRES iterations  : 30
+ T_min / T_max     : 1854.32 / 2373.31
+==================================================

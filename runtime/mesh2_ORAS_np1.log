@@ -1,0 +1,10 @@
+'/C/Program Files/Microsoft MPI/Bin/mpiexec' -np 1 FreeFem++-mpi -nw 'heat_ddm.edp' -mode 2 -ov 1 -NE 250 -NC -200 -NCT 250 -outprefix results/runtime/mesh2_ORAS_np1 -v 0 -ffddm_verbosity 0 -options_left 0
+Mesh: 135105 vertices, 264946 triangles
+==================================================
+ ORAS (1 ranks, overlap=1)
+ Setup time        : 61.1655 s
+ GMRES solve time  : 0.0754235 s
+ Total time        : 61.4728 s
+ GMRES iterations  : 1
+ T_min / T_max     : 1854.35 / 2373.34
+==================================================

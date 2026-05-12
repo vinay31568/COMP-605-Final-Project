@@ -1,0 +1,14 @@
+mode=0
+solver=direct
+mpi_ranks=1
+NE=350
+NC=-300
+NCT=350
+elements=563508
+vertices=285636
+dofs=285636
+setup_time_s=51.7643
+solve_time_s=0.073553
+total_time_s=51.8379
+T_min=1854.32
+T_max=2373.31

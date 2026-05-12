@@ -1,0 +1,16 @@
+mode=3
+solver=ASM
+mpi_ranks=2
+overlap=1
+NE=250
+NC=-200
+NCT=250
+elements=264946
+vertices=135105
+setup_time_s=26.3404
+solve_time_s=0.588521
+total_time_s=30.234
+gmres_iter=30
+gmres_tol=1e-06
+T_min=1854.35
+T_max=2373.34

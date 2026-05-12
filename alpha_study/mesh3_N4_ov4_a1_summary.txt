@@ -1,0 +1,17 @@
+mode=2
+solver=ORAS
+mpi_ranks=4
+overlap=4
+NE=350
+NC=-300
+NCT=350
+elements=563508
+vertices=285636
+setup_time_s=26.0664
+solve_time_s=0.798195
+total_time_s=31.1827
+gmres_iter=30
+gmres_tol=1e-06
+pORAS=1
+T_min=1854.32
+T_max=2373.31

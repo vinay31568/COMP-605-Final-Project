@@ -1,0 +1,27 @@
+'/C/Program Files/Microsoft MPI/Bin/mpiexec' -np 10 FreeFem++-mpi -nw 'heat_ddm.edp' -mode 2 -ov 1 -NE 250 -NC -200 -NCT 250 -outprefix results/runtime/mesh2_ORAS_np10 -v 0 -ffddm_verbosity 0 -options_left 0
+  current line = 57 mpirank 4 / 10
+  current line = 57 mpirank 8 / 10
+  current line = 57 mpirank 5 / 10
+  current line = 57 mpirank 1 / 10
+  current line = 57 mpirank 9 / 10
+  current line = 57 mpirank 6 / 10
+  current line = 57 mpirank 0 / 10
+Assertion fail : (triangles)
+	line :3084, in file ../bamglib/Mesh2.cpp
+  current line = 57 mpirank 7 / 10
+
+job aborted:
+[ranks] message
+
+[0-3] terminated
+
+[4] process exited without calling finalize
+
+[5-9] terminated
+
+---- error analysis -----
+
+[4] on LAPTOP-91991M48
+FreeFem++-mpi ended prematurely and may have crashed. exit code 0xc0000374
+
+---- error analysis -----

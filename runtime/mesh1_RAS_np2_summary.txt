@@ -1,0 +1,16 @@
+mode=1
+solver=RAS
+mpi_ranks=2
+overlap=1
+NE=150
+NC=-100
+NCT=150
+elements=93602
+vertices=48183
+setup_time_s=12.2528
+solve_time_s=0.193926
+total_time_s=13.2881
+gmres_iter=25
+gmres_tol=1e-06
+T_min=1854.47
+T_max=2373.56

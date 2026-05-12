@@ -1,0 +1,10 @@
+'/C/Program Files/Microsoft MPI/Bin/mpiexec' -np 2 FreeFem++-mpi -nw 'heat_ddm.edp' -mode 3 -ov 1 -NE 150 -NC -100 -NCT 150 -outprefix results/runtime/mesh1_ASM_np2 -v 0 -ffddm_verbosity 0 -options_left 0
+Mesh: 48183 vertices, 93602 triangles
+==================================================
+ ASM (2 ranks, overlap=1)
+ Setup time        : 8.00722 s
+ GMRES solve time  : 0.143114 s
+ Total time        : 8.93497 s
+ GMRES iterations  : 24
+ T_min / T_max     : 1854.47 / 2373.56
+==================================================

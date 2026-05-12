@@ -1,0 +1,13 @@
+'/C/Program Files/Microsoft MPI/Bin/mpiexec' -np 1 FreeFem++-mpi -nw 'heat_ddm.edp' -mode 0 -NE 150 -NC -100 -NCT 150 -outprefix results/mesh_sizing/mesh1_direct -tfield 1 -v 0 -ffddm_verbosity 0 -options_left 0
+Mesh: 48183 vertices, 93602 triangles
+==================================================
+ SEQUENTIAL DIRECT (mode 0)
+ Elements / Vertices / DOFs : 93602 / 48183 / 48183
+ Setup time                 : 7.08424 s
+ Solve time                 : 0.0073207 s
+ Total time                 : 7.09157 s
+ T_min / T_max              : 1854.47 / 2373.56
+==================================================
+  current line = 150 mpirank 0 / 1
+exit(0)
+ err code 0 ,  mpirank 0

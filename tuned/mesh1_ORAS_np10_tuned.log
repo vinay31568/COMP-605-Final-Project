@@ -1,0 +1,10 @@
+'/C/Program Files/Microsoft MPI/Bin/mpiexec' -np 10 FreeFem++-mpi -nw 'heat_ddm.edp' -mode 2 -ov 4 -NE 150 -NC -100 -NCT 150 -outprefix results/tuned/mesh1_ORAS_np10_tuned -pORAS 10000 -v 0 -ffddm_verbosity 0 -options_left 0
+Mesh: 48183 vertices, 93602 triangles
+==================================================
+ ORAS (10 ranks, overlap=4)
+ Setup time        : 2.01481 s
+ GMRES solve time  : 0.0410693 s
+ Total time        : 2.51987 s
+ GMRES iterations  : 12
+ T_min / T_max     : 1854.47 / 2373.56
+==================================================
