@@ -1,0 +1,256 @@
+// heat_ddm.edp
+// Steady-state heat conduction in the NRX-A6 NTP fuel-element midplane.
+// Reproduces the COMP 605 presentation: sequential direct baseline,
+// the ORAS overlap x partition study, and the RAS/ORAS/ASM runtime comparison.
+//
+// Modes (pass with -mode):
+//   0 = Sequential direct (UMFPACK, run with -np 1)
+//   1 = Parallel RAS
+//   2 = Parallel ORAS
+//   3 = Parallel ASM
+
+load "PETSc"
+load "iovtk"
+macro dimension()2//
+include "ffddm.idp"
+
+// ===== Arguments =====
+int    solverMode  = getARGV("-mode",       0);
+int    NE          = getARGV("-NE",       150);
+int    NCv         = getARGV("-NC",      -100);
+int    NCTv        = getARGV("-NCT",      150);
+int    overlap     = getARGV("-ov",         1);
+real   gmresTol    = getARGV("-tol",     1.0e-6);
+int    gmresMaxIt  = getARGV("-itmax",    500);
+real   pORAS       = getARGV("-pORAS", 25000.0);
+string outPrefix   = getARGV("-outprefix", "out");
+int    doVTK       = getARGV("-vtk",        0);
+int    doTField    = getARGV("-tfield",     0);
+
+// ===== Physics (NRX-A6 midplane) =====
+real qgen      = 4.0e9;
+real hconv     = 1.0e4;
+real Tinf      = 1400.0;
+real kGraphite = 40.0;
+real kZrC      = 21.0;
+
+// ===== Geometry: hexagon + 19 coolant channels =====
+real ftf   = 0.0191;
+real ap    = ftf/2.0;
+real ss    = ftf/sqrt(3.0);
+real rc    = 0.00127;
+real rcoat = rc*1.30;
+real pitch = 0.004;
+real hh    = pitch*sqrt(3.0)/2.0;
+
+real[int] xc = [-pitch, 0, pitch,
+                -1.5*pitch, -0.5*pitch, 0.5*pitch, 1.5*pitch,
+                -2*pitch,   -pitch,     0,         pitch, 2*pitch,
+                -1.5*pitch, -0.5*pitch, 0.5*pitch, 1.5*pitch,
+                -pitch,      0,         pitch];
+real[int] yc = [2*hh, 2*hh, 2*hh,
+                hh,   hh,   hh,   hh,
+                0,    0,    0,    0,   0,
+                -hh,  -hh,  -hh,  -hh,
+                -2*hh,-2*hh,-2*hh];
+
+border E0(t=0,1){ x = ss-(ss/2)*t;     y = ap*t;      label = 1; }
+border E1(t=0,1){ x = ss/2-ss*t;       y = ap;        label = 1; }
+border E2(t=0,1){ x = -ss/2-(ss/2)*t;  y = ap-ap*t;   label = 1; }
+border E3(t=0,1){ x = -ss+(ss/2)*t;    y = -ap*t;     label = 1; }
+border E4(t=0,1){ x = -ss/2+ss*t;      y = -ap;       label = 1; }
+border E5(t=0,1){ x = ss/2+(ss/2)*t;   y = -ap+ap*t;  label = 1; }
+border C   (t=0,2*pi; i){ x = xc[i]+rc*cos(t);    y = yc[i]+rc*sin(t);    label = 2; }
+border Coat(t=0,2*pi; i){ x = xc[i]+rcoat*cos(t); y = yc[i]+rcoat*sin(t); label = 3; }
+
+int[int] NC(19);  NC  = NCv;
+int[int] NCT(19); NCT = NCTv;
+mesh Th = buildmesh(E0(NE)+E1(NE)+E2(NE)+E3(NE)+E4(NE)+E5(NE)+C(NC)+Coat(NCT));
+
+func real kCondF() {
+    for(int j = 0; j < 19; j++)
+        if((x - xc[j])^2 + (y - yc[j])^2 < rcoat*rcoat) return kZrC;
+    return kGraphite;
+}
+
+macro Grad(u) [dx(u), dy(u)] //
+
+if (mpirank == 0) {
+    cout << "Mesh: " << Th.nv << " vertices, " << Th.nt << " triangles" << endl;
+}
+
+// ===========================================================
+// MODE 0 -- SEQUENTIAL DIRECT (single rank, UMFPACK)
+// ===========================================================
+if (solverMode == 0) {
+    if (mpisize > 1) {
+        if (mpirank == 0) cout << "ERROR: mode 0 must be run with -np 1" << endl;
+        exit(1);
+    }
+
+    fespace Vh(Th, P1);
+    Vh T;
+
+    varf vHeat(u, v) =
+          int2d(Th)(kCondF()*(Grad(u)'*Grad(v)))
+        + int1d(Th, 2)(hconv*u*v)
+        + int2d(Th)(qgen*v)
+        + int1d(Th, 2)(hconv*Tinf*v);
+
+    // Setup = assemble + factorize (force factorization via dummy zero-RHS solve)
+    real tA = mpiWtime();
+    matrix A    = vHeat(Vh, Vh, solver=sparsesolver);
+    real[int] b = vHeat(0, Vh);
+    real[int] zeroVec(b.n); zeroVec = 0;
+    T[] = A^-1 * zeroVec;
+    real tSetup = mpiWtime() - tA;
+
+    // Solve = back-substitution only (factorization cached)
+    real tS = mpiWtime();
+    T[] = A^-1 * b;
+    real tSolve = mpiWtime() - tS;
+
+    real tTotal = tSetup + tSolve;
+    real Tmin = T[].min, Tmax = T[].max;
+
+    cout << "==================================================" << endl;
+    cout << " SEQUENTIAL DIRECT (mode 0)"                          << endl;
+    cout << " Elements / Vertices / DOFs : "
+         << Th.nt << " / " << Th.nv << " / " << Vh.ndof            << endl;
+    cout << " Setup time                 : " << tSetup << " s"     << endl;
+    cout << " Solve time                 : " << tSolve << " s"     << endl;
+    cout << " Total time                 : " << tTotal << " s"     << endl;
+    cout << " T_min / T_max              : " << Tmin << " / " << Tmax << endl;
+    cout << "==================================================" << endl;
+
+    ofstream f(outPrefix + "_summary.txt");
+    f << "mode=0"                        << endl;
+    f << "solver=direct"                 << endl;
+    f << "mpi_ranks=1"                   << endl;
+    f << "NE="            << NE          << endl;
+    f << "NC="            << NCv         << endl;
+    f << "NCT="           << NCTv        << endl;
+    f << "elements="      << Th.nt       << endl;
+    f << "vertices="      << Th.nv       << endl;
+    f << "dofs="          << Vh.ndof     << endl;
+    f << "setup_time_s="  << tSetup      << endl;
+    f << "solve_time_s="  << tSolve      << endl;
+    f << "total_time_s="  << tTotal      << endl;
+    f << "T_min="         << Tmin        << endl;
+    f << "T_max="         << Tmax        << endl;
+
+    if (doVTK) savevtk(outPrefix + ".vtu", Th, T, dataname="Temperature");
+
+    // Dump nodal (x, y, T) triples for self-contained MATLAB plotting
+    if (doTField) {
+        ofstream tf(outPrefix + "_tfield.txt");
+        for (int i = 0; i < Th.nv; i++)
+            tf << Th(i).x << " " << Th(i).y << " " << T[][i] << endl;
+    }
+    exit(0);
+}
+
+// ===========================================================
+// MODES 1, 2, 3 -- PARALLEL DDM
+// ===========================================================
+mpiBarrier(mpiCommWorld);
+real tT0 = mpiWtime();
+
+// Required for the overlap=0 case (augmented-mesh code path in ffddm).
+// Harmless when overlap >= 1.
+macro Mmminoverlap()1//
+
+ffddmoverlap = overlap;
+ffddmbuildDmesh(M, Th, mpiCommWorld)
+
+macro def(u)  u //
+macro init(u) u //
+ffddmbuildDfespace(P, M, real, def, init, P1)
+
+// Physical operator + RHS (single varf; bilinear part -> A, linear part -> b)
+macro varfHeat(varfName, meshName, VhName)
+    varf varfName(u, v) = int2d(meshName)(kCondF()*(Grad(u)'*Grad(v)))
+                        + int1d(meshName, 2)(hconv*u*v)
+                        + int1d(meshName, 2)(hconv*Tinf*v)
+                        + int2d(meshName)(qgen*v);
+// EOM
+
+// Local preconditioner; ORAS adds optimized Robin term on artificial interfaces
+int useORAS = (solverMode == 2) ? 1 : 0;
+macro varfPrec(varfName, meshName, VhName)
+    varf varfName(u, v) = int2d(meshName)(kCondF()*(Grad(u)'*Grad(v)))
+                        + int1d(meshName, 2)(hconv*u*v)
+                        + int1d(meshName, ffddminterfacelabel)(useORAS*pORAS*u*v);
+// EOM
+
+string solverLabel;
+if      (solverMode == 1) { ffddmprecond = "ras";  solverLabel = "RAS";  }
+else if (solverMode == 2) { ffddmprecond = "oras"; solverLabel = "ORAS"; }
+else if (solverMode == 3) { ffddmprecond = "asm";  solverLabel = "ASM";  }
+else {
+    if (mpirank == 0) cout << "ERROR: invalid mode " << solverMode << endl;
+    exit(1);
+}
+
+mpiBarrier(mpiCommWorld);
+real tS0 = mpiWtime();
+ffddmsetupOperator(P, P, varfHeat)
+real[int] rhs(0);
+ffddmbuildrhs(P, varfHeat, rhs)
+ffddmsetupPrecond(P, varfPrec)
+mpiBarrier(mpiCommWorld);
+real tSetup = mpiWtime() - tS0;
+
+real[int] sol(rhs.n); sol = 0.0;
+mpiBarrier(mpiCommWorld);
+real tSV0 = mpiWtime();
+sol = PfGMRES(sol, rhs, gmresTol, gmresMaxIt, "right");
+mpiBarrier(mpiCommWorld);
+real tSolve = mpiWtime() - tSV0;
+real tTotal = mpiWtime() - tT0;
+
+int gmresIterL = Pnbiter, gmresIter;
+mpiAllReduce(gmresIterL, gmresIter, mpiCommWorld, mpiMAX);
+
+fespace VhL(MThi, P1);
+VhL Tloc; Tloc[] = sol;
+real lTmin = Tloc[].min, lTmax = Tloc[].max;
+real Tmin, Tmax;
+mpiAllReduce(lTmin, Tmin, mpiCommWorld, mpiMIN);
+mpiAllReduce(lTmax, Tmax, mpiCommWorld, mpiMAX);
+
+if (mpirank == 0) {
+    cout << "==================================================" << endl;
+    cout << " " << solverLabel
+         << " (" << mpisize << " ranks, overlap=" << overlap << ")" << endl;
+    cout << " Setup time        : " << tSetup << " s" << endl;
+    cout << " GMRES solve time  : " << tSolve << " s" << endl;
+    cout << " Total time        : " << tTotal << " s" << endl;
+    cout << " GMRES iterations  : " << gmresIter << endl;
+    cout << " T_min / T_max     : " << Tmin << " / " << Tmax << endl;
+    cout << "==================================================" << endl;
+
+    ofstream f(outPrefix + "_summary.txt");
+    f << "mode="          << solverMode  << endl;
+    f << "solver="        << solverLabel << endl;
+    f << "mpi_ranks="     << mpisize     << endl;
+    f << "overlap="       << overlap     << endl;
+    f << "NE="            << NE          << endl;
+    f << "NC="            << NCv         << endl;
+    f << "NCT="           << NCTv        << endl;
+    f << "elements="      << Th.nt       << endl;
+    f << "vertices="      << Th.nv       << endl;
+    f << "setup_time_s="  << tSetup      << endl;
+    f << "solve_time_s="  << tSolve      << endl;
+    f << "total_time_s="  << tTotal      << endl;
+    f << "gmres_iter="    << gmresIter   << endl;
+    f << "gmres_tol="     << gmresTol    << endl;
+    if (solverMode == 2) f << "pORAS=" << pORAS << endl;
+    f << "T_min="         << Tmin        << endl;
+    f << "T_max="         << Tmax        << endl;
+}
+// Residual history is captured from stdout (ffddm prints per-iteration
+// "[P] It: <k> ... Rel res = <r>" when ffddmverbosity >= 3). The driving
+// script redirects stdout to <outPrefix>.log; plot_results.m parses it.
+
+if (doVTK) savevtk(outPrefix + "_rank" + mpirank + ".vtu", MThi, Tloc, dataname="Temperature");

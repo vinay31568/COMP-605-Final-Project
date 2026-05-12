@@ -1,0 +1,564 @@
+>>> Stage 1: Sequential direct baseline
+Mesh 1 (NE=150 NC=-100 NCT=150)
+Mesh 2 (NE=250 NC=-200 NCT=250)
+Mesh 3 (NE=350 NC=-300 NCT=350)
+>>> Stage 2: ORAS overlap x partition study
+Mesh 1, N_D=2, overlap=0
+Mesh 1, N_D=2, overlap=1
+Mesh 1, N_D=2, overlap=2
+Mesh 1, N_D=2, overlap=4
+Mesh 1, N_D=2, overlap=6
+Mesh 1, N_D=2, overlap=8
+Mesh 1, N_D=3, overlap=0
+Mesh 1, N_D=3, overlap=1
+Mesh 1, N_D=3, overlap=2
+Mesh 1, N_D=3, overlap=4
+Mesh 1, N_D=3, overlap=6
+Mesh 1, N_D=3, overlap=8
+Mesh 1, N_D=4, overlap=0
+Mesh 1, N_D=4, overlap=1
+Mesh 1, N_D=4, overlap=2
+Mesh 1, N_D=4, overlap=4
+Mesh 1, N_D=4, overlap=6
+Mesh 1, N_D=4, overlap=8
+Mesh 1, N_D=5, overlap=0
+Mesh 1, N_D=5, overlap=1
+Mesh 1, N_D=5, overlap=2
+Mesh 1, N_D=5, overlap=4
+Mesh 1, N_D=5, overlap=6
+Mesh 1, N_D=5, overlap=8
+Mesh 1, N_D=6, overlap=0
+Mesh 1, N_D=6, overlap=1
+Mesh 1, N_D=6, overlap=2
+Mesh 1, N_D=6, overlap=4
+Mesh 1, N_D=6, overlap=6
+Mesh 1, N_D=6, overlap=8
+Mesh 3, N_D=2, overlap=0
+Mesh 3, N_D=2, overlap=1
+Mesh 3, N_D=2, overlap=2
+Mesh 3, N_D=2, overlap=4
+Mesh 3, N_D=2, overlap=6
+Mesh 3, N_D=2, overlap=8
+Mesh 3, N_D=3, overlap=0
+Mesh 3, N_D=3, overlap=1
+Mesh 3, N_D=3, overlap=2
+Mesh 3, N_D=3, overlap=4
+Mesh 3, N_D=3, overlap=6
+Mesh 3, N_D=3, overlap=8
+Mesh 3, N_D=4, overlap=0
+Mesh 3, N_D=4, overlap=1
+Mesh 3, N_D=4, overlap=2
+Mesh 3, N_D=4, overlap=4
+Mesh 3, N_D=4, overlap=6
+Mesh 3, N_D=4, overlap=8
+Mesh 3, N_D=5, overlap=0
+>>> Stage 1: Sequential direct baseline
+Mesh 1 (NE=150 NC=-100 NCT=150)
+  skip (exists): results/mesh_sizing/mesh1_direct_summary.txt
+Mesh 2 (NE=250 NC=-200 NCT=250)
+  skip (exists): results/mesh_sizing/mesh2_direct_summary.txt
+Mesh 3 (NE=350 NC=-300 NCT=350)
+  skip (exists): results/mesh_sizing/mesh3_direct_summary.txt
+>>> Stage 2: ORAS overlap x partition study
+Mesh 1, N_D=2, overlap=0
+  skip (exists): results/oras_study/mesh1_N2_ov0_summary.txt
+Mesh 1, N_D=2, overlap=1
+  skip (exists): results/oras_study/mesh1_N2_ov1_summary.txt
+Mesh 1, N_D=2, overlap=2
+  skip (exists): results/oras_study/mesh1_N2_ov2_summary.txt
+Mesh 1, N_D=2, overlap=4
+  skip (exists): results/oras_study/mesh1_N2_ov4_summary.txt
+Mesh 1, N_D=2, overlap=6
+  skip (exists): results/oras_study/mesh1_N2_ov6_summary.txt
+Mesh 1, N_D=2, overlap=8
+  skip (exists): results/oras_study/mesh1_N2_ov8_summary.txt
+Mesh 1, N_D=3, overlap=0
+  skip (exists): results/oras_study/mesh1_N3_ov0_summary.txt
+Mesh 1, N_D=3, overlap=1
+  skip (exists): results/oras_study/mesh1_N3_ov1_summary.txt
+Mesh 1, N_D=3, overlap=2
+  skip (exists): results/oras_study/mesh1_N3_ov2_summary.txt
+Mesh 1, N_D=3, overlap=4
+  skip (exists): results/oras_study/mesh1_N3_ov4_summary.txt
+Mesh 1, N_D=3, overlap=6
+  skip (exists): results/oras_study/mesh1_N3_ov6_summary.txt
+Mesh 1, N_D=3, overlap=8
+  skip (exists): results/oras_study/mesh1_N3_ov8_summary.txt
+Mesh 1, N_D=4, overlap=0
+  skip (exists): results/oras_study/mesh1_N4_ov0_summary.txt
+Mesh 1, N_D=4, overlap=1
+  skip (exists): results/oras_study/mesh1_N4_ov1_summary.txt
+Mesh 1, N_D=4, overlap=2
+  skip (exists): results/oras_study/mesh1_N4_ov2_summary.txt
+Mesh 1, N_D=4, overlap=4
+  skip (exists): results/oras_study/mesh1_N4_ov4_summary.txt
+Mesh 1, N_D=4, overlap=6
+  skip (exists): results/oras_study/mesh1_N4_ov6_summary.txt
+Mesh 1, N_D=4, overlap=8
+  skip (exists): results/oras_study/mesh1_N4_ov8_summary.txt
+Mesh 1, N_D=5, overlap=0
+  skip (exists): results/oras_study/mesh1_N5_ov0_summary.txt
+Mesh 1, N_D=5, overlap=1
+  skip (exists): results/oras_study/mesh1_N5_ov1_summary.txt
+Mesh 1, N_D=5, overlap=2
+  skip (exists): results/oras_study/mesh1_N5_ov2_summary.txt
+Mesh 1, N_D=5, overlap=4
+  skip (exists): results/oras_study/mesh1_N5_ov4_summary.txt
+Mesh 1, N_D=5, overlap=6
+  skip (exists): results/oras_study/mesh1_N5_ov6_summary.txt
+Mesh 1, N_D=5, overlap=8
+  skip (exists): results/oras_study/mesh1_N5_ov8_summary.txt
+Mesh 1, N_D=6, overlap=0
+  skip (exists): results/oras_study/mesh1_N6_ov0_summary.txt
+Mesh 1, N_D=6, overlap=1
+  skip (exists): results/oras_study/mesh1_N6_ov1_summary.txt
+Mesh 1, N_D=6, overlap=2
+  skip (exists): results/oras_study/mesh1_N6_ov2_summary.txt
+Mesh 1, N_D=6, overlap=4
+  skip (exists): results/oras_study/mesh1_N6_ov4_summary.txt
+Mesh 1, N_D=6, overlap=6
+  skip (exists): results/oras_study/mesh1_N6_ov6_summary.txt
+Mesh 1, N_D=6, overlap=8
+  skip (exists): results/oras_study/mesh1_N6_ov8_summary.txt
+Mesh 3, N_D=2, overlap=0
+  skip (exists): results/oras_study/mesh3_N2_ov0_summary.txt
+Mesh 3, N_D=2, overlap=1
+  skip (exists): results/oras_study/mesh3_N2_ov1_summary.txt
+Mesh 3, N_D=2, overlap=2
+  skip (exists): results/oras_study/mesh3_N2_ov2_summary.txt
+Mesh 3, N_D=2, overlap=4
+  skip (exists): results/oras_study/mesh3_N2_ov4_summary.txt
+Mesh 3, N_D=2, overlap=6
+  skip (exists): results/oras_study/mesh3_N2_ov6_summary.txt
+Mesh 3, N_D=2, overlap=8
+  skip (exists): results/oras_study/mesh3_N2_ov8_summary.txt
+Mesh 3, N_D=3, overlap=0
+  skip (exists): results/oras_study/mesh3_N3_ov0_summary.txt
+Mesh 3, N_D=3, overlap=1
+  skip (exists): results/oras_study/mesh3_N3_ov1_summary.txt
+Mesh 3, N_D=3, overlap=2
+  skip (exists): results/oras_study/mesh3_N3_ov2_summary.txt
+Mesh 3, N_D=3, overlap=4
+  skip (exists): results/oras_study/mesh3_N3_ov4_summary.txt
+Mesh 3, N_D=3, overlap=6
+  skip (exists): results/oras_study/mesh3_N3_ov6_summary.txt
+Mesh 3, N_D=3, overlap=8
+  skip (exists): results/oras_study/mesh3_N3_ov8_summary.txt
+Mesh 3, N_D=4, overlap=0
+  skip (exists): results/oras_study/mesh3_N4_ov0_summary.txt
+Mesh 3, N_D=4, overlap=1
+  skip (exists): results/oras_study/mesh3_N4_ov1_summary.txt
+Mesh 3, N_D=4, overlap=2
+  skip (exists): results/oras_study/mesh3_N4_ov2_summary.txt
+Mesh 3, N_D=4, overlap=4
+  skip (exists): results/oras_study/mesh3_N4_ov4_summary.txt
+Mesh 3, N_D=4, overlap=6
+  skip (exists): results/oras_study/mesh3_N4_ov6_summary.txt
+Mesh 3, N_D=4, overlap=8
+  skip (exists): results/oras_study/mesh3_N4_ov8_summary.txt
+Mesh 3, N_D=5, overlap=0
+>>> Stage 1: Sequential direct baseline
+Mesh 1 (NE=150 NC=-100 NCT=150)
+  skip (exists): results/mesh_sizing/mesh1_direct_summary.txt
+Mesh 2 (NE=250 NC=-200 NCT=250)
+  skip (exists): results/mesh_sizing/mesh2_direct_summary.txt
+Mesh 3 (NE=350 NC=-300 NCT=350)
+  skip (exists): results/mesh_sizing/mesh3_direct_summary.txt
+>>> Stage 2: ORAS overlap x partition study
+Mesh 1, N_D=2, overlap=0
+  skip (exists): results/oras_study/mesh1_N2_ov0_summary.txt
+Mesh 1, N_D=2, overlap=1
+  skip (exists): results/oras_study/mesh1_N2_ov1_summary.txt
+Mesh 1, N_D=2, overlap=2
+  skip (exists): results/oras_study/mesh1_N2_ov2_summary.txt
+Mesh 1, N_D=2, overlap=4
+  skip (exists): results/oras_study/mesh1_N2_ov4_summary.txt
+Mesh 1, N_D=2, overlap=6
+  skip (exists): results/oras_study/mesh1_N2_ov6_summary.txt
+Mesh 1, N_D=2, overlap=8
+  skip (exists): results/oras_study/mesh1_N2_ov8_summary.txt
+Mesh 1, N_D=3, overlap=0
+  skip (exists): results/oras_study/mesh1_N3_ov0_summary.txt
+Mesh 1, N_D=3, overlap=1
+  skip (exists): results/oras_study/mesh1_N3_ov1_summary.txt
+Mesh 1, N_D=3, overlap=2
+  skip (exists): results/oras_study/mesh1_N3_ov2_summary.txt
+Mesh 1, N_D=3, overlap=4
+  skip (exists): results/oras_study/mesh1_N3_ov4_summary.txt
+Mesh 1, N_D=3, overlap=6
+  skip (exists): results/oras_study/mesh1_N3_ov6_summary.txt
+Mesh 1, N_D=3, overlap=8
+  skip (exists): results/oras_study/mesh1_N3_ov8_summary.txt
+Mesh 1, N_D=4, overlap=0
+  skip (exists): results/oras_study/mesh1_N4_ov0_summary.txt
+Mesh 1, N_D=4, overlap=1
+  skip (exists): results/oras_study/mesh1_N4_ov1_summary.txt
+Mesh 1, N_D=4, overlap=2
+  skip (exists): results/oras_study/mesh1_N4_ov2_summary.txt
+Mesh 1, N_D=4, overlap=4
+  skip (exists): results/oras_study/mesh1_N4_ov4_summary.txt
+Mesh 1, N_D=4, overlap=6
+  skip (exists): results/oras_study/mesh1_N4_ov6_summary.txt
+Mesh 1, N_D=4, overlap=8
+  skip (exists): results/oras_study/mesh1_N4_ov8_summary.txt
+Mesh 1, N_D=5, overlap=0
+  skip (exists): results/oras_study/mesh1_N5_ov0_summary.txt
+Mesh 1, N_D=5, overlap=1
+  skip (exists): results/oras_study/mesh1_N5_ov1_summary.txt
+Mesh 1, N_D=5, overlap=2
+  skip (exists): results/oras_study/mesh1_N5_ov2_summary.txt
+Mesh 1, N_D=5, overlap=4
+  skip (exists): results/oras_study/mesh1_N5_ov4_summary.txt
+Mesh 1, N_D=5, overlap=6
+  skip (exists): results/oras_study/mesh1_N5_ov6_summary.txt
+Mesh 1, N_D=5, overlap=8
+  skip (exists): results/oras_study/mesh1_N5_ov8_summary.txt
+Mesh 1, N_D=6, overlap=0
+  skip (exists): results/oras_study/mesh1_N6_ov0_summary.txt
+Mesh 1, N_D=6, overlap=1
+  skip (exists): results/oras_study/mesh1_N6_ov1_summary.txt
+Mesh 1, N_D=6, overlap=2
+  skip (exists): results/oras_study/mesh1_N6_ov2_summary.txt
+Mesh 1, N_D=6, overlap=4
+  skip (exists): results/oras_study/mesh1_N6_ov4_summary.txt
+Mesh 1, N_D=6, overlap=6
+  skip (exists): results/oras_study/mesh1_N6_ov6_summary.txt
+Mesh 1, N_D=6, overlap=8
+  skip (exists): results/oras_study/mesh1_N6_ov8_summary.txt
+Mesh 3, N_D=2, overlap=0
+  skip (exists): results/oras_study/mesh3_N2_ov0_summary.txt
+Mesh 3, N_D=2, overlap=1
+  skip (exists): results/oras_study/mesh3_N2_ov1_summary.txt
+Mesh 3, N_D=2, overlap=2
+  skip (exists): results/oras_study/mesh3_N2_ov2_summary.txt
+Mesh 3, N_D=2, overlap=4
+  skip (exists): results/oras_study/mesh3_N2_ov4_summary.txt
+Mesh 3, N_D=2, overlap=6
+  skip (exists): results/oras_study/mesh3_N2_ov6_summary.txt
+Mesh 3, N_D=2, overlap=8
+  skip (exists): results/oras_study/mesh3_N2_ov8_summary.txt
+Mesh 3, N_D=3, overlap=0
+  skip (exists): results/oras_study/mesh3_N3_ov0_summary.txt
+Mesh 3, N_D=3, overlap=1
+  skip (exists): results/oras_study/mesh3_N3_ov1_summary.txt
+Mesh 3, N_D=3, overlap=2
+  skip (exists): results/oras_study/mesh3_N3_ov2_summary.txt
+Mesh 3, N_D=3, overlap=4
+  skip (exists): results/oras_study/mesh3_N3_ov4_summary.txt
+Mesh 3, N_D=3, overlap=6
+  skip (exists): results/oras_study/mesh3_N3_ov6_summary.txt
+Mesh 3, N_D=3, overlap=8
+  skip (exists): results/oras_study/mesh3_N3_ov8_summary.txt
+Mesh 3, N_D=4, overlap=0
+  skip (exists): results/oras_study/mesh3_N4_ov0_summary.txt
+Mesh 3, N_D=4, overlap=1
+  skip (exists): results/oras_study/mesh3_N4_ov1_summary.txt
+Mesh 3, N_D=4, overlap=2
+  skip (exists): results/oras_study/mesh3_N4_ov2_summary.txt
+Mesh 3, N_D=4, overlap=4
+  skip (exists): results/oras_study/mesh3_N4_ov4_summary.txt
+Mesh 3, N_D=4, overlap=6
+  skip (exists): results/oras_study/mesh3_N4_ov6_summary.txt
+Mesh 3, N_D=4, overlap=8
+  skip (exists): results/oras_study/mesh3_N4_ov8_summary.txt
+Mesh 3, N_D=5, overlap=0
+  FAILED (continuing): see results/oras_study/mesh3_N5_ov0.log
+Mesh 3, N_D=5, overlap=1
+  FAILED (continuing): see results/oras_study/mesh3_N5_ov1.log
+Mesh 3, N_D=5, overlap=2
+  FAILED (continuing): see results/oras_study/mesh3_N5_ov2.log
+Mesh 3, N_D=5, overlap=4
+  FAILED (continuing): see results/oras_study/mesh3_N5_ov4.log
+Mesh 3, N_D=5, overlap=6
+  FAILED (continuing): see results/oras_study/mesh3_N5_ov6.log
+Mesh 3, N_D=5, overlap=8
+  FAILED (continuing): see results/oras_study/mesh3_N5_ov8.log
+Mesh 3, N_D=6, overlap=0
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov0.log
+Mesh 3, N_D=6, overlap=1
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov1.log
+Mesh 3, N_D=6, overlap=2
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov2.log
+Mesh 3, N_D=6, overlap=4
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov4.log
+Mesh 3, N_D=6, overlap=6
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov6.log
+Mesh 3, N_D=6, overlap=8
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov8.log
+>>> Stage 3: Runtime comparison
+Mesh 1, RAS, np=1
+Mesh 1, RAS, np=2
+Mesh 1, RAS, np=4
+Mesh 1, RAS, np=8
+Mesh 1, RAS, np=10
+Mesh 1, ORAS, np=1
+Mesh 1, ORAS, np=2
+Mesh 1, ORAS, np=4
+Mesh 1, ORAS, np=8
+Mesh 1, ORAS, np=10
+Mesh 1, ASM, np=1
+Mesh 1, ASM, np=2
+Mesh 1, ASM, np=4
+Mesh 1, ASM, np=8
+Mesh 1, ASM, np=10
+Mesh 2, RAS, np=1
+Mesh 2, RAS, np=2
+Mesh 2, RAS, np=4
+Mesh 2, RAS, np=8
+  FAILED (continuing): see results/runtime/mesh2_RAS_np8.log
+Mesh 2, RAS, np=10
+  FAILED (continuing): see results/runtime/mesh2_RAS_np10.log
+Mesh 2, ORAS, np=1
+Mesh 2, ORAS, np=2
+Mesh 2, ORAS, np=4
+Mesh 2, ORAS, np=8
+  FAILED (continuing): see results/runtime/mesh2_ORAS_np8.log
+Mesh 2, ORAS, np=10
+  FAILED (continuing): see results/runtime/mesh2_ORAS_np10.log
+Mesh 2, ASM, np=1
+Mesh 2, ASM, np=2
+Mesh 2, ASM, np=4
+Mesh 2, ASM, np=8
+  FAILED (continuing): see results/runtime/mesh2_ASM_np8.log
+Mesh 2, ASM, np=10
+  FAILED (continuing): see results/runtime/mesh2_ASM_np10.log
+Mesh 3, RAS, np=1
+Mesh 3, RAS, np=2
+Mesh 3, RAS, np=4
+Mesh 3, RAS, np=8
+  FAILED (continuing): see results/runtime/mesh3_RAS_np8.log
+Mesh 3, RAS, np=10
+  FAILED (continuing): see results/runtime/mesh3_RAS_np10.log
+Mesh 3, ORAS, np=1
+Mesh 3, ORAS, np=2
+Mesh 3, ORAS, np=4
+Mesh 3, ORAS, np=8
+  FAILED (continuing): see results/runtime/mesh3_ORAS_np8.log
+Mesh 3, ORAS, np=10
+  FAILED (continuing): see results/runtime/mesh3_ORAS_np10.log
+Mesh 3, ASM, np=1
+Mesh 3, ASM, np=2
+Mesh 3, ASM, np=4
+Mesh 3, ASM, np=8
+  FAILED (continuing): see results/runtime/mesh3_ASM_np8.log
+Mesh 3, ASM, np=10
+  FAILED (continuing): see results/runtime/mesh3_ASM_np10.log
+
+>>> All stages complete.
+    Generate figures with:   matlab -batch plot_results
+>>> Stage 1: Sequential direct baseline
+Mesh 1 (NE=150 NC=-100 NCT=150)
+  skip (exists): results/mesh_sizing/mesh1_direct_summary.txt
+Mesh 2 (NE=250 NC=-200 NCT=250)
+  skip (exists): results/mesh_sizing/mesh2_direct_summary.txt
+Mesh 3 (NE=350 NC=-300 NCT=350)
+  skip (exists): results/mesh_sizing/mesh3_direct_summary.txt
+>>> Stage 2: ORAS overlap x partition study
+Mesh 1, N_D=2, overlap=0
+  skip (exists): results/oras_study/mesh1_N2_ov0_summary.txt
+Mesh 1, N_D=2, overlap=1
+  skip (exists): results/oras_study/mesh1_N2_ov1_summary.txt
+Mesh 1, N_D=2, overlap=2
+  skip (exists): results/oras_study/mesh1_N2_ov2_summary.txt
+Mesh 1, N_D=2, overlap=4
+  skip (exists): results/oras_study/mesh1_N2_ov4_summary.txt
+Mesh 1, N_D=2, overlap=6
+  skip (exists): results/oras_study/mesh1_N2_ov6_summary.txt
+Mesh 1, N_D=2, overlap=8
+  skip (exists): results/oras_study/mesh1_N2_ov8_summary.txt
+Mesh 1, N_D=3, overlap=0
+  skip (exists): results/oras_study/mesh1_N3_ov0_summary.txt
+Mesh 1, N_D=3, overlap=1
+  skip (exists): results/oras_study/mesh1_N3_ov1_summary.txt
+Mesh 1, N_D=3, overlap=2
+  skip (exists): results/oras_study/mesh1_N3_ov2_summary.txt
+Mesh 1, N_D=3, overlap=4
+  skip (exists): results/oras_study/mesh1_N3_ov4_summary.txt
+Mesh 1, N_D=3, overlap=6
+  skip (exists): results/oras_study/mesh1_N3_ov6_summary.txt
+Mesh 1, N_D=3, overlap=8
+  skip (exists): results/oras_study/mesh1_N3_ov8_summary.txt
+Mesh 1, N_D=4, overlap=0
+  skip (exists): results/oras_study/mesh1_N4_ov0_summary.txt
+Mesh 1, N_D=4, overlap=1
+  skip (exists): results/oras_study/mesh1_N4_ov1_summary.txt
+Mesh 1, N_D=4, overlap=2
+  skip (exists): results/oras_study/mesh1_N4_ov2_summary.txt
+Mesh 1, N_D=4, overlap=4
+  skip (exists): results/oras_study/mesh1_N4_ov4_summary.txt
+Mesh 1, N_D=4, overlap=6
+  skip (exists): results/oras_study/mesh1_N4_ov6_summary.txt
+Mesh 1, N_D=4, overlap=8
+  skip (exists): results/oras_study/mesh1_N4_ov8_summary.txt
+Mesh 1, N_D=5, overlap=0
+  skip (exists): results/oras_study/mesh1_N5_ov0_summary.txt
+Mesh 1, N_D=5, overlap=1
+  skip (exists): results/oras_study/mesh1_N5_ov1_summary.txt
+Mesh 1, N_D=5, overlap=2
+  skip (exists): results/oras_study/mesh1_N5_ov2_summary.txt
+Mesh 1, N_D=5, overlap=4
+  skip (exists): results/oras_study/mesh1_N5_ov4_summary.txt
+Mesh 1, N_D=5, overlap=6
+  skip (exists): results/oras_study/mesh1_N5_ov6_summary.txt
+Mesh 1, N_D=5, overlap=8
+  skip (exists): results/oras_study/mesh1_N5_ov8_summary.txt
+Mesh 1, N_D=6, overlap=0
+  skip (exists): results/oras_study/mesh1_N6_ov0_summary.txt
+Mesh 1, N_D=6, overlap=1
+  skip (exists): results/oras_study/mesh1_N6_ov1_summary.txt
+Mesh 1, N_D=6, overlap=2
+  skip (exists): results/oras_study/mesh1_N6_ov2_summary.txt
+Mesh 1, N_D=6, overlap=4
+  skip (exists): results/oras_study/mesh1_N6_ov4_summary.txt
+Mesh 1, N_D=6, overlap=6
+  skip (exists): results/oras_study/mesh1_N6_ov6_summary.txt
+Mesh 1, N_D=6, overlap=8
+  skip (exists): results/oras_study/mesh1_N6_ov8_summary.txt
+Mesh 3, N_D=2, overlap=0
+  skip (exists): results/oras_study/mesh3_N2_ov0_summary.txt
+Mesh 3, N_D=2, overlap=1
+  skip (exists): results/oras_study/mesh3_N2_ov1_summary.txt
+Mesh 3, N_D=2, overlap=2
+  skip (exists): results/oras_study/mesh3_N2_ov2_summary.txt
+Mesh 3, N_D=2, overlap=4
+  skip (exists): results/oras_study/mesh3_N2_ov4_summary.txt
+Mesh 3, N_D=2, overlap=6
+  skip (exists): results/oras_study/mesh3_N2_ov6_summary.txt
+Mesh 3, N_D=2, overlap=8
+  skip (exists): results/oras_study/mesh3_N2_ov8_summary.txt
+Mesh 3, N_D=3, overlap=0
+  skip (exists): results/oras_study/mesh3_N3_ov0_summary.txt
+Mesh 3, N_D=3, overlap=1
+  skip (exists): results/oras_study/mesh3_N3_ov1_summary.txt
+Mesh 3, N_D=3, overlap=2
+  skip (exists): results/oras_study/mesh3_N3_ov2_summary.txt
+Mesh 3, N_D=3, overlap=4
+  skip (exists): results/oras_study/mesh3_N3_ov4_summary.txt
+Mesh 3, N_D=3, overlap=6
+  skip (exists): results/oras_study/mesh3_N3_ov6_summary.txt
+Mesh 3, N_D=3, overlap=8
+  skip (exists): results/oras_study/mesh3_N3_ov8_summary.txt
+Mesh 3, N_D=4, overlap=0
+  skip (exists): results/oras_study/mesh3_N4_ov0_summary.txt
+Mesh 3, N_D=4, overlap=1
+  skip (exists): results/oras_study/mesh3_N4_ov1_summary.txt
+Mesh 3, N_D=4, overlap=2
+  skip (exists): results/oras_study/mesh3_N4_ov2_summary.txt
+Mesh 3, N_D=4, overlap=4
+  skip (exists): results/oras_study/mesh3_N4_ov4_summary.txt
+Mesh 3, N_D=4, overlap=6
+  skip (exists): results/oras_study/mesh3_N4_ov6_summary.txt
+Mesh 3, N_D=4, overlap=8
+  skip (exists): results/oras_study/mesh3_N4_ov8_summary.txt
+Mesh 3, N_D=5, overlap=0
+Mesh 3, N_D=5, overlap=1
+Mesh 3, N_D=5, overlap=2
+Mesh 3, N_D=5, overlap=4
+Mesh 3, N_D=5, overlap=6
+Mesh 3, N_D=5, overlap=8
+Mesh 3, N_D=6, overlap=0
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov0.log
+Mesh 3, N_D=6, overlap=1
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov1.log
+Mesh 3, N_D=6, overlap=2
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov2.log
+Mesh 3, N_D=6, overlap=4
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov4.log
+Mesh 3, N_D=6, overlap=6
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov6.log
+Mesh 3, N_D=6, overlap=8
+  FAILED (continuing): see results/oras_study/mesh3_N6_ov8.log
+>>> Stage 3: Runtime comparison
+Mesh 1, RAS, np=1
+  skip (exists): results/runtime/mesh1_RAS_np1_summary.txt
+Mesh 1, RAS, np=2
+  skip (exists): results/runtime/mesh1_RAS_np2_summary.txt
+Mesh 1, RAS, np=4
+  skip (exists): results/runtime/mesh1_RAS_np4_summary.txt
+Mesh 1, RAS, np=8
+  skip (exists): results/runtime/mesh1_RAS_np8_summary.txt
+Mesh 1, RAS, np=10
+  skip (exists): results/runtime/mesh1_RAS_np10_summary.txt
+Mesh 1, ORAS, np=1
+  skip (exists): results/runtime/mesh1_ORAS_np1_summary.txt
+Mesh 1, ORAS, np=2
+  skip (exists): results/runtime/mesh1_ORAS_np2_summary.txt
+Mesh 1, ORAS, np=4
+  skip (exists): results/runtime/mesh1_ORAS_np4_summary.txt
+Mesh 1, ORAS, np=8
+  skip (exists): results/runtime/mesh1_ORAS_np8_summary.txt
+Mesh 1, ORAS, np=10
+  skip (exists): results/runtime/mesh1_ORAS_np10_summary.txt
+Mesh 1, ASM, np=1
+  skip (exists): results/runtime/mesh1_ASM_np1_summary.txt
+Mesh 1, ASM, np=2
+  skip (exists): results/runtime/mesh1_ASM_np2_summary.txt
+Mesh 1, ASM, np=4
+  skip (exists): results/runtime/mesh1_ASM_np4_summary.txt
+Mesh 1, ASM, np=8
+  skip (exists): results/runtime/mesh1_ASM_np8_summary.txt
+Mesh 1, ASM, np=10
+  skip (exists): results/runtime/mesh1_ASM_np10_summary.txt
+Mesh 2, RAS, np=1
+  skip (exists): results/runtime/mesh2_RAS_np1_summary.txt
+Mesh 2, RAS, np=2
+  skip (exists): results/runtime/mesh2_RAS_np2_summary.txt
+Mesh 2, RAS, np=4
+  skip (exists): results/runtime/mesh2_RAS_np4_summary.txt
+Mesh 2, RAS, np=8
+  FAILED (continuing): see results/runtime/mesh2_RAS_np8.log
+Mesh 2, RAS, np=10
+  FAILED (continuing): see results/runtime/mesh2_RAS_np10.log
+Mesh 2, ORAS, np=1
+  skip (exists): results/runtime/mesh2_ORAS_np1_summary.txt
+Mesh 2, ORAS, np=2
+  skip (exists): results/runtime/mesh2_ORAS_np2_summary.txt
+Mesh 2, ORAS, np=4
+  skip (exists): results/runtime/mesh2_ORAS_np4_summary.txt
+Mesh 2, ORAS, np=8
+  FAILED (continuing): see results/runtime/mesh2_ORAS_np8.log
+Mesh 2, ORAS, np=10
+  FAILED (continuing): see results/runtime/mesh2_ORAS_np10.log
+Mesh 2, ASM, np=1
+  skip (exists): results/runtime/mesh2_ASM_np1_summary.txt
+Mesh 2, ASM, np=2
+  skip (exists): results/runtime/mesh2_ASM_np2_summary.txt
+Mesh 2, ASM, np=4
+  skip (exists): results/runtime/mesh2_ASM_np4_summary.txt
+Mesh 2, ASM, np=8
+  FAILED (continuing): see results/runtime/mesh2_ASM_np8.log
+Mesh 2, ASM, np=10
+  FAILED (continuing): see results/runtime/mesh2_ASM_np10.log
+Mesh 3, RAS, np=1
+  skip (exists): results/runtime/mesh3_RAS_np1_summary.txt
+Mesh 3, RAS, np=2
+  skip (exists): results/runtime/mesh3_RAS_np2_summary.txt
+Mesh 3, RAS, np=4
+  skip (exists): results/runtime/mesh3_RAS_np4_summary.txt
+Mesh 3, RAS, np=8
+  FAILED (continuing): see results/runtime/mesh3_RAS_np8.log
+Mesh 3, RAS, np=10
+  FAILED (continuing): see results/runtime/mesh3_RAS_np10.log
+Mesh 3, ORAS, np=1
+  skip (exists): results/runtime/mesh3_ORAS_np1_summary.txt
+Mesh 3, ORAS, np=2
+  skip (exists): results/runtime/mesh3_ORAS_np2_summary.txt
+Mesh 3, ORAS, np=4
+  skip (exists): results/runtime/mesh3_ORAS_np4_summary.txt
+Mesh 3, ORAS, np=8
+  FAILED (continuing): see results/runtime/mesh3_ORAS_np8.log
+Mesh 3, ORAS, np=10
+  FAILED (continuing): see results/runtime/mesh3_ORAS_np10.log
+Mesh 3, ASM, np=1
+  skip (exists): results/runtime/mesh3_ASM_np1_summary.txt
+Mesh 3, ASM, np=2
+  skip (exists): results/runtime/mesh3_ASM_np2_summary.txt
+Mesh 3, ASM, np=4
+  skip (exists): results/runtime/mesh3_ASM_np4_summary.txt
+Mesh 3, ASM, np=8
+  FAILED (continuing): see results/runtime/mesh3_ASM_np8.log
+Mesh 3, ASM, np=10
+  FAILED (continuing): see results/runtime/mesh3_ASM_np10.log
+
+>>> All stages complete.
+    Generate figures with:   matlab -batch plot_results
